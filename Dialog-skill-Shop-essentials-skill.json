@@ -1,0 +1,1588 @@
+{
+  "intents": [
+    {
+      "intent": "Covid",
+      "examples": [
+        {
+          "text": "Corona Virus"
+        },
+        {
+          "text": "Covid-19"
+        },
+        {
+          "text": "I want to know more about Covid"
+        },
+        {
+          "text": "Latest news on Covid"
+        },
+        {
+          "text": "What is Covid"
+        }
+      ]
+    },
+    {
+      "intent": "enquiry",
+      "examples": [
+        {
+          "text": "Can you show me the price list?"
+        },
+        {
+          "text": "Can you show me the product list?"
+        },
+        {
+          "text": "What are the offers you are having?"
+        },
+        {
+          "text": "What are the special items do u have?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greetings",
+      "examples": [
+        {
+          "text": "Good Afternoon"
+        },
+        {
+          "text": "Good Evening"
+        },
+        {
+          "text": "Good Morning"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "hi"
+        },
+        {
+          "text": "Hii"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "order",
+      "examples": [
+        {
+          "text": "Can you place me an order"
+        },
+        {
+          "text": "I want to place an order"
+        },
+        {
+          "text": "Please take the order"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "address",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "Address",
+          "patterns": [
+            "<? input.text ?>"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Indore",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Nalkheda",
+          "synonyms": [
+            "MAdhya Pradesh",
+            "MP"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Ujjain",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "email",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "email",
+          "patterns": [
+            "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "enquiry",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "menu",
+          "synonyms": [
+            "item",
+            "items",
+            "list",
+            "listing",
+            "lists",
+            "objects",
+            "taskbar",
+            "tokens",
+            "toolbars"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "offers",
+          "synonyms": [
+            "buy",
+            "discount",
+            "discounts",
+            "offer",
+            "offered",
+            "offering",
+            "sells"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "price",
+          "synonyms": [
+            "cost",
+            "discount",
+            "prices",
+            "rate",
+            "value"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "product",
+          "synonyms": [
+            "packaging",
+            "products"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "safety",
+          "synonyms": [
+            "corona",
+            "Covid 19",
+            "covid-19",
+            "health",
+            "infection",
+            "norovirus",
+            "pandemic",
+            "privacy",
+            "protection",
+            "protections",
+            "safeguards",
+            "security",
+            "transportation",
+            "virus",
+            "viruses"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Greetings",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Good Afternoon",
+          "synonyms": [
+            "g a",
+            "GA"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Evening",
+          "synonyms": [
+            "ge",
+            "gud evng"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Morning",
+          "synonyms": [
+            "GM ",
+            "gud m",
+            "gud mrng"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "items",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Almonds",
+          "synonyms": [
+            "badam"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Asafoetida",
+          "synonyms": [
+            "Hing"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "bay leaf",
+          "synonyms": [
+            "tej patta"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "capers",
+          "synonyms": [
+            "kachra"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Cardamom",
+          "synonyms": [
+            "ELAICHI"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "carom",
+          "synonyms": [
+            "ajwain",
+            "thymol"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "cashew",
+          "synonyms": [
+            "kaju",
+            "nut",
+            "nuts"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "CINNAMON",
+          "synonyms": [
+            "Dalchini"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "cloves",
+          "synonyms": [
+            "lavang",
+            "long"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Coriander",
+          "synonyms": [
+            "daniya",
+            "Dhana",
+            "Dhania "
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Cumin Seed",
+          "synonyms": [
+            "Cumin",
+            "Jeera"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Curry",
+          "synonyms": [
+            "crinkled",
+            "kadi patta",
+            "leaf",
+            "midrib",
+            "patta"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Dates",
+          "synonyms": [
+            "khajur",
+            "kharak"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "fennel",
+          "synonyms": [
+            "sanchal",
+            "sauf",
+            "sof"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Fenugreek seed",
+          "synonyms": [
+            "Fenugreek ",
+            "methi"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Garlic",
+          "synonyms": [
+            "Lahsun"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "ginger",
+          "synonyms": [
+            "sonth"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Gingers",
+          "synonyms": [
+            "Adrak"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Groundnuts",
+          "synonyms": [
+            "moomphali",
+            "peanuts"
+          ]
+        },
+        {
+          "type": "patterns",
+          "value": "Item Name",
+          "patterns": [
+            "<? input.text ?>"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Jaggery",
+          "synonyms": [
+            "gur"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Lemon",
+          "synonyms": [
+            "lime",
+            "nibu",
+            "nimbu"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "mace",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "mango powder",
+          "synonyms": [
+            "amchoor",
+            "mango"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Mint",
+          "synonyms": [
+            "pudina"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Mustard Seed",
+          "synonyms": [
+            "mustard",
+            "Rai",
+            "Sarso"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "nutmeg",
+          "synonyms": [
+            "jaiphal"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "onion",
+          "synonyms": [
+            "onions",
+            "pyaj",
+            "pyaz"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "peppercorns",
+          "synonyms": [
+            "kali mirch",
+            "mirch"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "popy",
+          "synonyms": [
+            "khus",
+            "poppy"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Red Chili Pepper",
+          "synonyms": [
+            "chili",
+            "chilies",
+            "chilis",
+            "chilli",
+            "cookoff",
+            "jalapeño",
+            "Lal Mirchi",
+            "Mirchi",
+            "salsas",
+            "sauce"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "saffron",
+          "synonyms": [
+            "kesar",
+            "mayur"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Salt",
+          "synonyms": [
+            "Namak",
+            "Uppu"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Sesame",
+          "synonyms": [
+            "Til",
+            "Tilli"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "spice",
+          "synonyms": [
+            "garam masala"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Tamarind",
+          "synonyms": [
+            "guava",
+            "Imali",
+            "imli",
+            "neem"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Turmeric",
+          "synonyms": [
+            "Arishana",
+            "Haldi",
+            "Passupu"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "order",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "order",
+          "synonyms": [
+            "ask",
+            "asked",
+            "asking",
+            "bought",
+            "buy",
+            "calls",
+            "demanded",
+            "demanding",
+            "demands",
+            "intends",
+            "kharidna",
+            "ordered",
+            "ordering",
+            "orders",
+            "persuades",
+            "purchase",
+            "purchased",
+            "request",
+            "requested",
+            "requesting",
+            "requests",
+            "sell",
+            "sought",
+            "want",
+            "wanted",
+            "wants"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "payment",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Card",
+          "synonyms": [
+            "ATM",
+            "BOI",
+            "cards",
+            "coupon",
+            "SBI"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "COD",
+          "synonyms": [
+            "Cash",
+            "cashing",
+            "money",
+            "payment",
+            "payouts"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "UPI",
+          "synonyms": [
+            "Amazon Pay",
+            "Google Pay",
+            "GPay",
+            "Paytm",
+            "Phone pe",
+            "PhonePe"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "https://www.fast2sms.com/dev/bulkV2",
+      "name": "main_webhook",
+      "headers": [
+        {
+          "name": "authorization",
+          "value": "9lHgKYPBx3CoFtXShudqbUcrRWAv5w0VZpLaGsMfID6iO1T8J2W56ADpzhPS8UxjN97BLoJT3XlvH2Vf"
+        }
+      ]
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_5_1615741322623",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "How many do you want ?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1615777919647",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1615777919668",
+      "previous_sibling": "handler_7_1615777919668"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "We accept COD,Card, UPI . What is your mode of payment?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_3_1615778096196",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1615778096197",
+      "previous_sibling": "handler_8_1615778096197"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1615772777275",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_2_1615772777277"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Enter Quantities "
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_9_1615772777275",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1615772777277",
+      "previous_sibling": "handler_2_1615772777277"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Can you please give your contact number?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_4_1615778628658",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1615778628659",
+      "previous_sibling": "handler_5_1615778628659"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1615772355279",
+      "context": {
+        "Order_name": "$Order_name"
+      },
+      "conditions": "$Order_name",
+      "event_name": "input",
+      "dialog_node": "handler_5_1615772355314"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1615778628658",
+      "context": {
+        "number_2": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_5_1615778628659"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1615777919647",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_7_1615777919668"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Can you provide me the item you want?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_9_1615772355279",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1615772355314",
+      "previous_sibling": "handler_5_1615772355314"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1615778096196",
+      "context": {
+        "payment": "@payment"
+      },
+      "conditions": "@payment",
+      "event_name": "input",
+      "dialog_node": "handler_8_1615778096197"
+    },
+    {
+      "type": "standard",
+      "title": "Costumer's Name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$Costumer_name, Can you please provide your mail id for future refernce."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "context": {
+        "Costumer_name": "<? input.text ?>"
+      },
+      "conditions": "$next",
+      "dialog_node": "node_10_1615718409681"
+    },
+    {
+      "type": "standard",
+      "title": "Enquiry",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#enquiry || @enquiry",
+      "dialog_node": "node_10_1615721787722",
+      "previous_sibling": "node_8_1615739940512"
+    },
+    {
+      "type": "standard",
+      "title": "Take Order ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Enter Quantity "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1615741322623",
+      "context": {
+        "Order_name": "<? input.text ?>"
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "$next || @items",
+      "dialog_node": "node_1_1615771312958",
+      "previous_sibling": "response_6_1615780885206"
+    },
+    {
+      "type": "standard",
+      "title": "deleting context variables",
+      "parent": "node_7_1615779316756",
+      "conditions": "true",
+      "dialog_node": "node_1_1615892934247",
+      "previous_sibling": "node_2_1615978933261"
+    },
+    {
+      "type": "standard",
+      "title": "Message node",
+      "parent": "node_7_1615779316756",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "route": "q",
+            "message": "Thank you $Costumer_name . Your order of  $Order_name of $number quantity is placed at $Address. Please pay your order with $payment . The invoice is sent to $number_2  Stay Home Stay Safe.",
+            "numbers": "$number_2",
+            "language": "english",
+            "sender_id": "FSTSMS"
+          },
+          "result_variable": "webhook_result_1"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1615892934247"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1615978933261"
+    },
+    {
+      "type": "standard",
+      "title": "email",
+      "parent": "node_10_1615718409681",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@email",
+      "dialog_node": "node_3_1615961619022"
+    },
+    {
+      "type": "standard",
+      "title": "Order",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Can you provide me the item you want?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "text": true
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#order || @order || $next",
+      "dialog_node": "node_5_1615741322623",
+      "previous_sibling": "node_10_1615721787722"
+    },
+    {
+      "type": "standard",
+      "title": "Address",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank you $Costumer_name . Your order of  $Order_name of $number quantity is placed at $Address. Please pay your order with $payment . The invoice is sent to $number_2\n\nStay Home Stay Safe."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1615777877149",
+      "context": {
+        "Address": "<? input.text ?>"
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "$next || @address",
+      "dialog_node": "node_7_1615779316756"
+    },
+    {
+      "type": "standard",
+      "title": "Greetings",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@Greetings || #Greetings",
+      "dialog_node": "node_8_1615739940512",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "frame",
+      "title": "Order Details",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is your address?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1615771312958",
+      "conditions": "$Order_name",
+      "dialog_node": "node_8_1615777877149"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Morning😊. How can I Help You"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "You can select an option",
+            "options": [
+              {
+                "label": "Item List",
+                "value": {
+                  "input": {
+                    "text": "Item List"
+                  }
+                }
+              },
+              {
+                "label": "Price List",
+                "value": {
+                  "input": {
+                    "text": "Price List"
+                  }
+                }
+              },
+              {
+                "label": "Offers",
+                "value": {
+                  "input": {
+                    "text": "offers"
+                  }
+                }
+              },
+              {
+                "label": "Taken an Order",
+                "value": {
+                  "input": {
+                    "text": "Order"
+                  }
+                }
+              },
+              {
+                "label": "Know more about Covid-19",
+                "value": {
+                  "input": {
+                    "text": "corona"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_8_1615739940512",
+      "conditions": "@Greetings:(Good Morning)",
+      "dialog_node": "response_10_1615740031277"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Afternoon😊. How can I Help You"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "You can select an option",
+            "options": [
+              {
+                "label": "Item List",
+                "value": {
+                  "input": {
+                    "text": "Item List"
+                  }
+                }
+              },
+              {
+                "label": "Price List",
+                "value": {
+                  "input": {
+                    "text": "Price List"
+                  }
+                }
+              },
+              {
+                "label": "Offers",
+                "value": {
+                  "input": {
+                    "text": "offers"
+                  }
+                }
+              },
+              {
+                "label": "Taken an Order",
+                "value": {
+                  "input": {
+                    "text": "Order"
+                  }
+                }
+              },
+              {
+                "label": "Know more about Covid-19",
+                "value": {
+                  "input": {
+                    "text": "corona"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_8_1615739940512",
+      "conditions": "@Greetings:(Good Afternoon)",
+      "dialog_node": "response_10_1615740068664",
+      "previous_sibling": "response_10_1615740031277"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello How may I assist you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "You can select an option",
+            "options": [
+              {
+                "label": "Item List",
+                "value": {
+                  "input": {
+                    "text": "Item List"
+                  }
+                }
+              },
+              {
+                "label": "Price List",
+                "value": {
+                  "input": {
+                    "text": "Price List"
+                  }
+                }
+              },
+              {
+                "label": "Offers",
+                "value": {
+                  "input": {
+                    "text": "offers"
+                  }
+                }
+              },
+              {
+                "label": "Taken an Order",
+                "value": {
+                  "input": {
+                    "text": "Order"
+                  }
+                }
+              },
+              {
+                "label": "Know more about Covid-19",
+                "value": {
+                  "input": {
+                    "text": "corona"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_8_1615739940512",
+      "conditions": "anything_else",
+      "dialog_node": "response_10_1615740123113",
+      "previous_sibling": "response_9_1615740095918"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank you $Costumer_name. Your mail id is $email. How may I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "You can select an option",
+            "options": [
+              {
+                "label": "Item List",
+                "value": {
+                  "input": {
+                    "text": "Item List"
+                  }
+                }
+              },
+              {
+                "label": "Price List",
+                "value": {
+                  "input": {
+                    "text": "Price List"
+                  }
+                }
+              },
+              {
+                "label": "Offers",
+                "value": {
+                  "input": {
+                    "text": "offers"
+                  }
+                }
+              },
+              {
+                "label": "Taken an Order",
+                "value": {
+                  "input": {
+                    "text": "Order"
+                  }
+                }
+              },
+              {
+                "label": "Know more about Covid-19",
+                "value": {
+                  "input": {
+                    "text": "corona"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_3_1615961619022",
+      "context": {
+        "email": "@email.literal"
+      },
+      "dialog_node": "response_10_1615997443070"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "COVID-19 is a public health emergency. Everyone needs to assess and manage the risks of\nCOVID-19, and in particular businesses should consider the risks to their workers and visitors. As\nan employer, you also have a legal responsibility to protect workers and others from risk to their\nhealth and safety\n\nBefore working in a shop area, be sure you are properly trained to perform the work to be done.  This includes completing the Basic Shop Safety Training as well as any required training specific to the machinery/equipment you will be working on.  Inspect your tools and equipment before using them.  If a procedure is potentially hazardous to others in the area, alert them accordingly.  Notify your supervisor if you notice any unsafe conditions such as: defective tools/equipment or machines that are not properly guarded.  Be careful not to distract persons who are working in the shop area.   Always remember that machinery/equipment can be dangerous when not used properly.  Ensure you are following RIT’s Shop Safety guidelines that are posted in shop areas. \n\n\n\nPlease visit this site at <a href=\"https://www.who.int/emergencies/diseases/novel-coronavirus-2019\" target=\"blank\">Covid-19 Updates</a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1615721787722",
+      "conditions": "@enquiry:safety",
+      "dialog_node": "response_2_1615722702719",
+      "previous_sibling": "response_7_1615722397215"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Free above Rs. 800or Rs. 49 extra."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Upto 10% Off on Grocery & Staples"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "source": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_RWAkaNed8mVleLRJLaNbM479je_2IBlPGg&usqp=CAU",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_10_1615721787722",
+      "conditions": "@enquiry:offers",
+      "dialog_node": "response_5_1615723125637",
+      "previous_sibling": "response_2_1615722702719"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Can you provide me the item you want?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1615741322623",
+      "context": {
+        "text": true
+      },
+      "disabled": true,
+      "conditions": "$text",
+      "dialog_node": "response_6_1615780885206"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "title": "Item Price List",
+            "source": "https://cdn.zeebiz.com/sites/default/files/priclist.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_10_1615721787722",
+      "conditions": "@enquiry:price",
+      "dialog_node": "response_7_1615722397215"
+    },
+    {
+      "type": "response_condition",
+      "parent": "node_2_1615978933261",
+      "conditions": "anything_else",
+      "dialog_node": "response_7_1615978970200",
+      "previous_sibling": "response_9_1615978967187"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "source": "https://i.pinimg.com/originals/c0/91/8a/c0918a07c507e10100098915b6be4bad.png",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "This items are presently available in our store."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "You can take an order",
+            "options": [
+              {
+                "label": "Take an order",
+                "value": {
+                  "input": {
+                    "text": "order"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_10_1615721787722",
+      "conditions": "@enquiry:menu",
+      "dialog_node": "response_8_1615723421673",
+      "previous_sibling": "response_5_1615723125637"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Evening😊. How can I Help You?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "You can select an option",
+            "options": [
+              {
+                "label": "Item List",
+                "value": {
+                  "input": {
+                    "text": "Item List"
+                  }
+                }
+              },
+              {
+                "label": "Price List",
+                "value": {
+                  "input": {
+                    "text": "Price List"
+                  }
+                }
+              },
+              {
+                "label": "Offers",
+                "value": {
+                  "input": {
+                    "text": "offers"
+                  }
+                }
+              },
+              {
+                "label": "Taken an Order",
+                "value": {
+                  "input": {
+                    "text": "Order"
+                  }
+                }
+              },
+              {
+                "label": "Know more about Covid-19",
+                "value": {
+                  "input": {
+                    "text": "corona"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_8_1615739940512",
+      "conditions": "@Greetings:(Good Evening)",
+      "dialog_node": "response_9_1615740095918",
+      "previous_sibling": "response_10_1615740068664"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Message sent"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1615978933261",
+      "conditions": "$webhook_result_1",
+      "dialog_node": "response_9_1615978967187"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1615777877149",
+      "variable": "$payment",
+      "dialog_node": "slot_3_1615778096196",
+      "previous_sibling": "slot_8_1615777919647"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1615777877149",
+      "variable": "$number_2",
+      "dialog_node": "slot_4_1615778628658",
+      "previous_sibling": "slot_3_1615778096196"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1615777877149",
+      "variable": "$number",
+      "dialog_node": "slot_8_1615777919647",
+      "previous_sibling": "node_7_1615779316756"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1615771312958",
+      "variable": "$Order_name",
+      "dialog_node": "slot_9_1615772355279",
+      "previous_sibling": "node_8_1615777877149"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1615771312958",
+      "variable": "$number",
+      "dialog_node": "slot_9_1615772777275",
+      "previous_sibling": "slot_9_1615772355279"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello, Welcome to Agrawal Kirana Store. We love having with us.  I am Agrawal Kirana Store chatbot capable of showing the list of items, prices of items, offers or discounts and place order.  "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Please Enter your name."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "next": true
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome",
+      "disambiguation_opt_out": true
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Shop essentials skill",
+  "language": "en",
+  "description": ""
+}
