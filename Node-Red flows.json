@@ -1,1 +1,0 @@
-[{"id":"bdc262a6.d7ebb","type":"function","z":"5cde5471.1bef8c","name":"","func":"msg.payload=msg.payload.text;\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":280,"y":160,"wires":[["8911848c.826648","5d437c0.9a3bb84"]]}]
