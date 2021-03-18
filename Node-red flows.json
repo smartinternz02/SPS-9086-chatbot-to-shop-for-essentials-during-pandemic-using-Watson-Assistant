@@ -1,0 +1,171 @@
+[
+    {
+        "id": "5cde5471.1bef8c",
+        "type": "tab",
+        "label": "Chatbot To Shop For Essentials",
+        "disabled": false,
+        "info": "Today, because of social distancing and other issues it can be risky for some people to shop for essential items in person. This project helps with this issue by giving people an online option to shop for essentials. With the help of Watson assistant, a chatbot is built."
+    },
+    {
+        "id": "1892d320.c8d91d",
+        "type": "debug",
+        "z": "5cde5471.1bef8c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "707f7c7c.a95db4",
+        "type": "ui_form",
+        "z": "5cde5471.1bef8c",
+        "name": "",
+        "label": "",
+        "group": "51daa020.6730a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Enter the input",
+                "value": "text",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "text": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "bdc262a6.d7ebb"
+            ]
+        ]
+    },
+    {
+        "id": "bdc262a6.d7ebb",
+        "type": "function",
+        "z": "5cde5471.1bef8c",
+        "name": "",
+        "func": "msg.payload=msg.payload.text;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "8911848c.826648",
+                "5d437c0.9a3bb84"
+            ]
+        ]
+    },
+    {
+        "id": "d908600f.07535",
+        "type": "function",
+        "z": "5cde5471.1bef8c",
+        "name": "",
+        "func": "msg.payload=msg.payload.output.text[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 640,
+        "y": 300,
+        "wires": [
+            [
+                "ea5fb184.5bf31"
+            ]
+        ]
+    },
+    {
+        "id": "8911848c.826648",
+        "type": "watson-conversation-v1",
+        "z": "5cde5471.1bef8c",
+        "name": "",
+        "workspaceid": "048cf07e-ae2e-41fd-a117-1f80962a53fb",
+        "multiuser": false,
+        "context": true,
+        "empty-payload": false,
+        "service-endpoint": "https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/b9ae9b0f-3600-446a-aff4-fe56e4a72d47",
+        "timeout": "",
+        "optout-learning": false,
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "1892d320.c8d91d",
+                "d908600f.07535"
+            ]
+        ],
+        "info": "{\n  \"intents\": [\n    {\n      \"intent\": \"enquiry\",\n      \"examples\": [\n        {\n          \"text\": \"Can you show me the price list?\"\n        },\n        {\n          \"text\": \"Can you show me the product list?\"\n        },\n        {\n          \"text\": \"What are the offers you are having?\"\n        },\n        {\n          \"text\": \"What are the special items do u have?\"\n        }\n      ],\n      \"description\": \"\"\n    },\n    {\n      \"intent\": \"Greetings\",\n      \"examples\": [\n        {\n          \"text\": \"Good Afternoon\"\n        },\n        {\n          \"text\": \"Good Evening\"\n        },\n        {\n          \"text\": \"Good Morning\"\n        },\n        {\n          \"text\": \"Hello\"\n        },\n        {\n          \"text\": \"hi\"\n        },\n        {\n          \"text\": \"Hii\"\n        }\n      ],\n      \"description\": \"\"\n    },\n    {\n      \"intent\": \"order\",\n      \"examples\": [\n        {\n          \"text\": \"Can you place me an order\"\n        },\n        {\n          \"text\": \"I want to place an order\"\n        },\n        {\n          \"text\": \"Please take the order\"\n        }\n      ],\n      \"description\": \"\"\n    }\n  ],\n  \"entities\": [\n    {\n      \"entity\": \"enquiry\",\n      \"values\": [\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"menu\",\n          \"synonyms\": [\n            \"item\",\n            \"items\",\n            \"list\",\n            \"listing\",\n            \"lists\",\n            \"objects\",\n            \"taskbar\",\n            \"tokens\",\n            \"toolbars\"\n          ]\n        },\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"offers\",\n          \"synonyms\": [\n            \"buy\",\n            \"offer\",\n            \"offered\",\n            \"offering\",\n            \"sells\"\n          ]\n        },\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"price\",\n          \"synonyms\": [\n            \"cost\",\n            \"discount\",\n            \"prices\",\n            \"rate\",\n            \"value\"\n          ]\n        },\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"product\",\n          \"synonyms\": [\n            \"packaging\",\n            \"products\"\n          ]\n        },\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"safety\",\n          \"synonyms\": [\n            \"corona\",\n            \"covid\",\n            \"health\",\n            \"norovirus\",\n            \"pandemic\",\n            \"privacy\",\n            \"protection\",\n            \"protections\",\n            \"safeguards\",\n            \"security\",\n            \"transportation\",\n            \"virus\",\n            \"viruses\"\n          ]\n        }\n      ],\n      \"fuzzy_match\": true\n    },\n    {\n      \"entity\": \"Greetings\",\n      \"values\": [\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"Good Afternoon\",\n          \"synonyms\": [\n            \"g a\",\n            \"GA\"\n          ]\n        },\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"Good Evening\",\n          \"synonyms\": [\n            \"ge\",\n            \"gud evng\"\n          ]\n        },\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"Good Morning\",\n          \"synonyms\": [\n            \"GM \",\n            \"gud m\",\n            \"gud mrng\"\n          ]\n        }\n      ],\n      \"fuzzy_match\": true\n    },\n    {\n      \"entity\": \"items\",\n      \"values\": [\n        {\n          \"type\": \"patterns\",\n          \"value\": \"Item Name\",\n          \"patterns\": [\n            \"<? input.text ?>\"\n          ]\n        }\n      ],\n      \"fuzzy_match\": true\n    },\n    {\n      \"entity\": \"order\",\n      \"values\": [\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"order\",\n          \"synonyms\": [\n            \"asking\",\n            \"calls\",\n            \"demanded\",\n            \"demands\",\n            \"ordered\",\n            \"ordering\",\n            \"orders\",\n            \"requested\",\n            \"requests\"\n          ]\n        }\n      ],\n      \"fuzzy_match\": true\n    },\n    {\n      \"entity\": \"payment\",\n      \"values\": [\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"Card\",\n          \"synonyms\": [\n            \"ATM\",\n            \"BOI\",\n            \"cards\",\n            \"coupon\",\n            \"SBI\"\n          ]\n        },\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"COD\",\n          \"synonyms\": [\n            \"Cash\",\n            \"cashing\",\n            \"money\",\n            \"payment\",\n            \"payouts\"\n          ]\n        },\n        {\n          \"type\": \"synonyms\",\n          \"value\": \"UPI\",\n          \"synonyms\": [\n            \"Amazon Pay\",\n            \"Google Pay\",\n            \"GPay\",\n            \"Paytm\",\n            \"Phone pe\",\n            \"PhonePe\"\n          ]\n        }\n      ],\n      \"fuzzy_match\": true\n    },\n    {\n      \"entity\": \"sys-number\",\n      \"values\": [],\n      \"fuzzy_match\": true\n    }\n  ],\n  \"metadata\": {\n    \"api_version\": {\n      \"major_version\": \"v2\",\n      \"minor_version\": \"2018-11-08\"\n    }\n  },\n  \"webhooks\": [\n    {\n      \"url\": \"https://www.fast2sms.com/dev/bulkV2\",\n      \"name\": \"main_webhook\",\n      \"headers\": []\n    }\n  ],\n  \"dialog_nodes\": [\n    {\n      \"type\": \"standard\",\n      \"title\": \"Anything else\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"I didn't understand. You can try rephrasing.\"\n              },\n              {\n                \"text\": \"Can you reword your statement? I'm not understanding.\"\n              },\n              {\n                \"text\": \"I didn't get your meaning.\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"conditions\": \"anything_else\",\n      \"dialog_node\": \"Anything else\",\n      \"previous_sibling\": \"node_5_1615741322623\",\n      \"disambiguation_opt_out\": true\n    },\n    {\n      \"type\": \"event_handler\",\n      \"output\": {\n        \"text\": {\n          \"values\": [\n            \"How many do you want ?\"\n          ],\n          \"selection_policy\": \"sequential\"\n        }\n      },\n      \"parent\": \"slot_8_1615777919647\",\n      \"event_name\": \"focus\",\n      \"dialog_node\": \"handler_1_1615777919668\",\n      \"previous_sibling\": \"handler_7_1615777919668\"\n    },\n    {\n      \"type\": \"event_handler\",\n      \"output\": {\n        \"text\": {\n          \"values\": [\n            \"We accept COD,Card, UPI . What is your mode of payment?\"\n          ],\n          \"selection_policy\": \"sequential\"\n        }\n      },\n      \"parent\": \"slot_3_1615778096196\",\n      \"event_name\": \"focus\",\n      \"dialog_node\": \"handler_1_1615778096197\",\n      \"previous_sibling\": \"handler_8_1615778096197\"\n    },\n    {\n      \"type\": \"event_handler\",\n      \"output\": {},\n      \"parent\": \"slot_9_1615772777275\",\n      \"context\": {\n        \"number\": \"@sys-number\"\n      },\n      \"conditions\": \"@sys-number\",\n      \"event_name\": \"input\",\n      \"dialog_node\": \"handler_2_1615772777277\"\n    },\n    {\n      \"type\": \"event_handler\",\n      \"output\": {\n        \"text\": {\n          \"values\": [\n            \"Enter Quantities \"\n          ],\n          \"selection_policy\": \"sequential\"\n        }\n      },\n      \"parent\": \"slot_9_1615772777275\",\n      \"event_name\": \"focus\",\n      \"dialog_node\": \"handler_3_1615772777277\",\n      \"previous_sibling\": \"handler_2_1615772777277\"\n    },\n    {\n      \"type\": \"event_handler\",\n      \"output\": {\n        \"text\": {\n          \"values\": [\n            \"Can you please give your contact number?\"\n          ],\n          \"selection_policy\": \"sequential\"\n        }\n      },\n      \"parent\": \"slot_4_1615778628658\",\n      \"event_name\": \"focus\",\n      \"dialog_node\": \"handler_4_1615778628659\",\n      \"previous_sibling\": \"handler_5_1615778628659\"\n    },\n    {\n      \"type\": \"event_handler\",\n      \"output\": {},\n      \"parent\": \"slot_9_1615772355279\",\n      \"context\": {\n        \"Order_name\": \"$Order_name\"\n      },\n      \"conditions\": \"$Order_name\",\n      \"event_name\": \"input\",\n      \"dialog_node\": \"handler_5_1615772355314\"\n    },\n    {\n      \"type\": \"event_handler\",\n      \"output\": {},\n      \"parent\": \"slot_4_1615778628658\",\n      \"context\": {\n        \"number_2\": \"@sys-number\"\n      },\n      \"conditions\": \"@sys-number\",\n      \"event_name\": \"input\",\n      \"dialog_node\": \"handler_5_1615778628659\"\n    },\n    {\n      \"type\": \"event_handler\",\n      \"output\": {},\n      \"parent\": \"slot_8_1615777919647\",\n      \"context\": {\n        \"number\": \"@sys-number\"\n      },\n      \"conditions\": \"@sys-number\",\n      \"event_name\": \"input\",\n      \"dialog_node\": \"handler_7_1615777919668\"\n    },\n    {\n      \"type\": \"event_handler\",\n      \"output\": {\n        \"text\": {\n          \"values\": [\n            \"Can you provide me the item you want?\"\n          ],\n          \"selection_policy\": \"sequential\"\n        }\n      },\n      \"parent\": \"slot_9_1615772355279\",\n      \"event_name\": \"focus\",\n      \"dialog_node\": \"handler_8_1615772355314\",\n      \"previous_sibling\": \"handler_5_1615772355314\"\n    },\n    {\n      \"type\": \"event_handler\",\n      \"output\": {},\n      \"parent\": \"slot_3_1615778096196\",\n      \"context\": {\n        \"payment\": \"@payment\"\n      },\n      \"conditions\": \"@payment\",\n      \"event_name\": \"input\",\n      \"dialog_node\": \"handler_8_1615778096197\"\n    },\n    {\n      \"type\": \"standard\",\n      \"title\": \"Costumer's Name\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"Thank you $Costumer_name. How may I help You?\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"parent\": \"Welcome\",\n      \"context\": {\n        \"Costumer_name\": \"<? input.text ?>\"\n      },\n      \"conditions\": \"$next\",\n      \"dialog_node\": \"node_10_1615718409681\"\n    },\n    {\n      \"type\": \"standard\",\n      \"title\": \"Enquiry\",\n      \"metadata\": {\n        \"_customization\": {\n          \"mcr\": true\n        }\n      },\n      \"conditions\": \"#enquiry || @enquiry\",\n      \"dialog_node\": \"node_10_1615721787722\",\n      \"previous_sibling\": \"node_8_1615739940512\"\n    },\n    {\n      \"type\": \"standard\",\n      \"title\": \"Take Order \",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"Enter Quantity \"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"parent\": \"node_5_1615741322623\",\n      \"context\": {\n        \"Order_name\": \"<? input.text ?>\"\n      },\n      \"metadata\": {\n        \"_customization\": {\n          \"mcr\": false\n        }\n      },\n      \"conditions\": \"$next\",\n      \"dialog_node\": \"node_1_1615771312958\",\n      \"previous_sibling\": \"response_6_1615780885206\"\n    },\n    {\n      \"type\": \"standard\",\n      \"title\": \"Order\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"Can you provide me the item you want?\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"context\": {\n        \"text\": true\n      },\n      \"metadata\": {\n        \"_customization\": {\n          \"mcr\": false\n        }\n      },\n      \"conditions\": \"#order || @order || $next\",\n      \"dialog_node\": \"node_5_1615741322623\",\n      \"previous_sibling\": \"node_10_1615721787722\"\n    },\n    {\n      \"type\": \"standard\",\n      \"title\": \"Address\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"Thank you $Costumer_name . Your order of  $Order_name of $number quantity is placed at $Address. Please pay your order with $payment . The invoice is sent to $number_2\\nIf there is any queries please contact. 9898989898\\nStay Home Stay Safe.\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"parent\": \"node_8_1615777877149\",\n      \"context\": {\n        \"Address\": \"<? input.text ?>\"\n      },\n      \"conditions\": \"$next\",\n      \"dialog_node\": \"node_7_1615779316756\"\n    },\n    {\n      \"type\": \"standard\",\n      \"title\": \"Greetings\",\n      \"metadata\": {\n        \"_customization\": {\n          \"mcr\": true\n        }\n      },\n      \"conditions\": \"@Greetings || #Greetings\",\n      \"dialog_node\": \"node_8_1615739940512\",\n      \"previous_sibling\": \"Welcome\"\n    },\n    {\n      \"type\": \"frame\",\n      \"title\": \"Order Details\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"What is your address?\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"parent\": \"node_1_1615771312958\",\n      \"conditions\": \"$Order_name\",\n      \"dialog_node\": \"node_8_1615777877149\"\n    },\n    {\n      \"type\": \"response_condition\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"Good Morning😊. How can I Help You\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"parent\": \"node_8_1615739940512\",\n      \"conditions\": \"@Greetings:(Good Morning)\",\n      \"dialog_node\": \"response_10_1615740031277\"\n    },\n    {\n      \"type\": \"response_condition\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"Good Afternoon😊. How can I Help You\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"parent\": \"node_8_1615739940512\",\n      \"conditions\": \"@Greetings:(Good Afternoon)\",\n      \"dialog_node\": \"response_10_1615740068664\",\n      \"previous_sibling\": \"response_10_1615740031277\"\n    },\n    {\n      \"type\": \"response_condition\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"Hello How may I assist you?\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"parent\": \"node_8_1615739940512\",\n      \"conditions\": \"anything_else\",\n      \"dialog_node\": \"response_10_1615740123113\",\n      \"previous_sibling\": \"response_9_1615740095918\"\n    },\n    {\n      \"type\": \"response_condition\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"COVID-19 is a public health emergency. Everyone needs to assess and manage the risks of\\nCOVID-19, and in particular businesses should consider the risks to their workers and visitors. As\\nan employer, you also have a legal responsibility to protect workers and others from risk to their\\nhealth and safety\\n\\nBefore working in a shop area, be sure you are properly trained to perform the work to be done.  This includes completing the Basic Shop Safety Training as well as any required training specific to the machinery/equipment you will be working on.  Inspect your tools and equipment before using them.  If a procedure is potentially hazardous to others in the area, alert them accordingly.  Notify your supervisor if you notice any unsafe conditions such as: defective tools/equipment or machines that are not properly guarded.  Be careful not to distract persons who are working in the shop area.   Always remember that machinery/equipment can be dangerous when not used properly.  Ensure you are following RIT’s Shop Safety guidelines that are posted in shop areas. \"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"parent\": \"node_10_1615721787722\",\n      \"conditions\": \"@enquiry:safety\",\n      \"dialog_node\": \"response_2_1615722702719\",\n      \"previous_sibling\": \"response_7_1615722397215\"\n    },\n    {\n      \"type\": \"response_condition\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"Free above Rs. 800or Rs. 49 extra.\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          },\n          {\n            \"values\": [\n              {\n                \"text\": \"Upto 10% Off on Grocery & Staples\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          },\n          {\n            \"source\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_RWAkaNed8mVleLRJLaNbM479je_2IBlPGg&usqp=CAU\",\n            \"response_type\": \"image\"\n          }\n        ]\n      },\n      \"parent\": \"node_10_1615721787722\",\n      \"conditions\": \"@enquiry:offers\",\n      \"dialog_node\": \"response_5_1615723125637\",\n      \"previous_sibling\": \"response_2_1615722702719\"\n    },\n    {\n      \"type\": \"response_condition\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"Can you provide me the item you want?\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"parent\": \"node_5_1615741322623\",\n      \"context\": {\n        \"text\": true\n      },\n      \"disabled\": true,\n      \"conditions\": \"$text\",\n      \"dialog_node\": \"response_6_1615780885206\"\n    },\n    {\n      \"type\": \"response_condition\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"title\": \"Item List\",\n            \"source\": \"https://i.pinimg.com/originals/c0/91/8a/c0918a07c507e10100098915b6be4bad.png\",\n            \"response_type\": \"image\"\n          }\n        ]\n      },\n      \"parent\": \"node_10_1615721787722\",\n      \"conditions\": \"@enquiry:price\",\n      \"dialog_node\": \"response_7_1615722397215\"\n    },\n    {\n      \"type\": \"response_condition\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"source\": \"https://i.pinimg.com/originals/c0/91/8a/c0918a07c507e10100098915b6be4bad.png\",\n            \"response_type\": \"image\"\n          }\n        ]\n      },\n      \"parent\": \"node_10_1615721787722\",\n      \"conditions\": \"@enquiry:menu\",\n      \"dialog_node\": \"response_8_1615723421673\",\n      \"previous_sibling\": \"response_5_1615723125637\"\n    },\n    {\n      \"type\": \"response_condition\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"Good Evening😊. How can I Help You?\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"parent\": \"node_8_1615739940512\",\n      \"conditions\": \"@Greetings:(Good Evening)\",\n      \"dialog_node\": \"response_9_1615740095918\",\n      \"previous_sibling\": \"response_10_1615740068664\"\n    },\n    {\n      \"type\": \"slot\",\n      \"parent\": \"node_8_1615777877149\",\n      \"variable\": \"$payment\",\n      \"dialog_node\": \"slot_3_1615778096196\",\n      \"previous_sibling\": \"slot_8_1615777919647\"\n    },\n    {\n      \"type\": \"slot\",\n      \"parent\": \"node_8_1615777877149\",\n      \"variable\": \"$number_2\",\n      \"dialog_node\": \"slot_4_1615778628658\",\n      \"previous_sibling\": \"slot_3_1615778096196\"\n    },\n    {\n      \"type\": \"slot\",\n      \"parent\": \"node_8_1615777877149\",\n      \"variable\": \"$number\",\n      \"dialog_node\": \"slot_8_1615777919647\",\n      \"previous_sibling\": \"node_7_1615779316756\"\n    },\n    {\n      \"type\": \"slot\",\n      \"parent\": \"node_1_1615771312958\",\n      \"variable\": \"$Order_name\",\n      \"dialog_node\": \"slot_9_1615772355279\",\n      \"previous_sibling\": \"node_8_1615777877149\"\n    },\n    {\n      \"type\": \"slot\",\n      \"parent\": \"node_1_1615771312958\",\n      \"variable\": \"$number\",\n      \"dialog_node\": \"slot_9_1615772777275\",\n      \"previous_sibling\": \"slot_9_1615772355279\"\n    },\n    {\n      \"type\": \"standard\",\n      \"title\": \"Welcome\",\n      \"output\": {\n        \"generic\": [\n          {\n            \"values\": [\n              {\n                \"text\": \"Hello, Welcome to Agrawal Kirana Store. We love having with us. I can help you to find the product you're looking. \"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          },\n          {\n            \"values\": [\n              {\n                \"text\": \"Please Enter your name.\"\n              }\n            ],\n            \"response_type\": \"text\",\n            \"selection_policy\": \"sequential\"\n          }\n        ]\n      },\n      \"context\": {\n        \"next\": true\n      },\n      \"conditions\": \"welcome\",\n      \"dialog_node\": \"Welcome\"\n    }\n  ],\n  \"counterexamples\": [],\n  \"system_settings\": {\n    \"off_topic\": {\n      \"enabled\": true\n    },\n    \"disambiguation\": {\n      \"prompt\": \"Did you mean:\",\n      \"enabled\": true,\n      \"randomize\": true,\n      \"max_suggestions\": 5,\n      \"suggestion_text_policy\": \"title\",\n      \"none_of_the_above_prompt\": \"None of the above\"\n    },\n    \"system_entities\": {\n      \"enabled\": true\n    },\n    \"human_agent_assist\": {\n      \"prompt\": \"Did you mean:\"\n    },\n    \"intent_classification\": {\n      \"training_backend_version\": \"v2\"\n    },\n    \"spelling_auto_correct\": true\n  },\n  \"learning_opt_out\": false,\n  \"name\": \"Shop essentials skill\",\n  \"language\": \"en\",\n  \"description\": \"\"\n}"
+    },
+    {
+        "id": "5d437c0.9a3bb84",
+        "type": "ui_text",
+        "z": "5cde5471.1bef8c",
+        "group": "51daa020.6730a",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "You",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 370,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ea5fb184.5bf31",
+        "type": "ui_text",
+        "z": "5cde5471.1bef8c",
+        "group": "51daa020.6730a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Bot",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 760,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "51daa020.6730a",
+        "type": "ui_group",
+        "name": "Shop Chatbot",
+        "tab": "5c2d24fd.aba18c",
+        "order": 1,
+        "disp": true,
+        "width": 17,
+        "collapse": false
+    },
+    {
+        "id": "5c2d24fd.aba18c",
+        "type": "ui_tab",
+        "name": "Shop Chatbot",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
